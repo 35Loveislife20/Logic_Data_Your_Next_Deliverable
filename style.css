@@ -1,134 +1,359 @@
+/* ============================================
+   Cash-Flow Tracker — ledger-inspired dashboard
+   ============================================ */
+
+:root {
+    --paper: #F3F5F2;
+    --card: #FFFFFF;
+    --ink: #182420;
+    --muted: #5C6862;
+    --line: #D6DAD2;
+    --line-soft: #E7E9E4;
+
+    --pine: #1F6F54;
+    --pine-dark: #16523F;
+    --rust: #A6472B;
+    --rust-bg: #F7E9E3;
+    --crimson: #B3261E;
+
+    --radius-card: 6px;
+    --radius-field: 8px;
+    --radius-pill: 999px;
+
+    --space-1: 6px;
+    --space-2: 10px;
+    --space-3: 16px;
+    --space-4: 20px;
+    --space-5: 28px;
+}
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f0f2f5;
-    color: #333;
-    padding: 20px;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 24px;
-    font-size: 2rem;
-    color: #1a1a2e;
-}
-
-.container {
-    max-width: 700px;
+.app {
+    max-width: 1180px;
     margin: 0 auto;
+    padding: var(--space-5) var(--space-4) 60px;
 }
 
+/* Header */
+.app-header {
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.app-sub {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Grid */
+.grid-row {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.grid-row--top {
+    grid-template-columns: 1fr 1.15fr 1.2fr;
+}
+
+.grid-row--bottom {
+    grid-template-columns: 1fr 2.4fr;
+}
+
+/* Cards */
 .card {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
 }
 
 .card h2 {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-    color: #444;
-}
-
-input {
-    width: 100%;
-    padding: 10px 14px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-}
-
-input:focus {
-    border-color: #4f46e5;
-}
-
-button {
-    padding: 10px 20px;
-    background: #4f46e5;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-button:hover {
-    background: #4338ca;
-}
-
-.summary p {
-    font-size: 1rem;
-    margin-bottom: 8px;
-}
-
-.summary span {
-    font-weight: bold;
-    color: #4f46e5;
-}
-
-#displayBalance.danger {
-    color: red;
-}
-
-.alert-banner {
-    background: #fee2e2;
-    color: #b91c1c;
-    border: 1px solid #fca5a5;
-    padding: 10px 14px;
-    border-radius: 8px;
-    margin-top: 10px;
+    margin: 0 0 var(--space-3);
+    font-size: 15px;
     font-weight: 600;
 }
 
+/* Fields */
+.field {
+    display: block;
+    margin-bottom: var(--space-3);
+}
+
+.field-label {
+    display: block;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: var(--space-1);
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-field);
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: var(--card);
+}
+
+input::placeholder {
+    color: #9CA6A0;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--pine);
+    box-shadow: 0 0 0 3px rgba(31, 111, 84, 0.15);
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: var(--radius-pill);
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 120ms ease;
+}
+
+.btn--primary {
+    background: var(--pine);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--pine-dark);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
 .error {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 6px;
+    color: var(--crimson);
+    font-size: 13px;
+    margin: var(--space-2) 0 0;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
-#expenseList {
-    list-style: none;
-    padding: 0;
+/* Summary */
+.summary-rows {
+    margin: 0;
 }
 
-#expenseList li {
+.summary-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
+    align-items: baseline;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--line-soft);
 }
 
-#expenseList li:last-child {
+.summary-row dt {
+    color: var(--muted);
+    font-size: 13.5px;
+    font-weight: 400;
+}
+
+.summary-row dd {
+    margin: 0;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+}
+
+.summary-row--balance {
+    border-bottom: none;
+    padding-top: var(--space-3);
+}
+
+.summary-row--balance dt {
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.summary-row--balance dd {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--pine);
+}
+
+.summary-row--balance dd.negative {
+    color: var(--crimson);
+}
+
+.alert-banner {
+    margin: var(--space-3) 0 0;
+    background: var(--rust-bg);
+    border: 1px solid var(--rust);
+    color: var(--rust);
+    padding: 10px 12px;
+    border-radius: var(--radius-field);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Expense list + legend */
+.expense-list,
+.legend-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 230px;
+    overflow-y: auto;
+}
+
+.expense-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.expense-item:last-child {
     border-bottom: none;
 }
 
-.delete-btn {
-    background: #ef4444;
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    border-radius: 6px;
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: 0 0 auto;
 }
 
-.delete-btn:hover {
-    background: #dc2626;
+.expense-item-name {
+    flex: 1;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-canvas {
-    display: block;
-    margin: 0 auto;
+.expense-item-amount {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 13.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 4px;
+}
+
+.remove-btn:hover {
+    color: var(--crimson);
+}
+
+.legend-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 7px 0;
+    font-size: 13.5px;
+}
+
+.empty-state {
+    color: var(--muted);
+    font-size: 13.5px;
+    padding: var(--space-2) 0;
+}
+
+/* Chart card */
+.card--chart {
+    padding: 0;
+}
+
+.chart-split {
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+}
+
+.legend-pane {
+    padding: var(--space-4);
+    border-right: 1px solid var(--line);
+}
+
+.chart-pane {
+    padding: var(--space-4);
+    text-align: center;
+}
+
+.chart-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    margin: var(--space-2) auto 0;
+}
+
+.chart-empty {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: var(--space-4);
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+
+    .grid-row--top,
+    .grid-row--bottom,
+    .chart-split {
+        grid-template-columns: 1fr;
+    }
+
+    .legend-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
 }

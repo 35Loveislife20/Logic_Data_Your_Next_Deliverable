@@ -4,56 +4,101 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logic & Data — Your Next Deliverable</title>
+    <title>Cash-Flow Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
+    <div class="app">
 
-    <div class="container">
-        <h1>💰 Cash-Flow Tracker</h1>
+        <header class="app-header">
+            <h1>Cash-Flow Tracker</h1>
+            <p class="app-sub">Track your salary against what goes out, at a glance.</p>
+        </header>
 
-        <!-- SALARY INPUT -->
-        <div class="card">
-            <h2>Set Your Salary</h2>
-            <input type="number" id="salaryInput" placeholder="Enter total salary" />
-            <button id="setSalaryBtn">Set Salary</button>
-            <p id="salaryError" class="error hidden">Please enter a valid salary.</p>
+        <div class="grid-row grid-row--top">
+
+            <section class="card" aria-labelledby="salary-h">
+                <h2 id="salary-h">Set Your Salary</h2>
+                <label class="field">
+                    <span class="field-label">Monthly salary</span>
+                    <input type="number" id="salaryInput" placeholder="Enter total salary" min="0"
+                        inputmode="decimal" />
+                </label>
+                <button id="setSalaryBtn" class="btn btn--primary">Set Salary</button>
+                <p id="salaryError" class="error hidden" role="alert">Please enter a valid salary.</p>
+            </section>
+
+            <section class="card card--summary" aria-labelledby="summary-h">
+                <h2 id="summary-h">Summary</h2>
+                <dl class="summary-rows">
+                    <div class="summary-row">
+                        <dt>Total Salary</dt>
+                        <dd id="displaySalary">₹0</dd>
+                    </div>
+                    <div class="summary-row">
+                        <dt>Total Expenses</dt>
+                        <dd id="displayExpenses">₹0</dd>
+                    </div>
+                    <div class="summary-row summary-row--balance">
+                        <dt>Remaining Balance</dt>
+                        <dd id="displayBalance">₹0</dd>
+                    </div>
+                </dl>
+                <p id="alertBanner" class="alert-banner hidden" aria-live="polite">
+                    Warning: Balance is below 10% of your salary!
+                </p>
+            </section>
+
+            <section class="card card--list" aria-labelledby="list-h">
+                <h2 id="list-h">Expense List</h2>
+                <ul id="expenseList" class="expense-list">
+                    <li class="empty-state">No expenses yet — add one to get started.</li>
+                </ul>
+            </section>
+
         </div>
 
-        <!-- EXPENSE INPUT -->
-        <div class="card">
-            <h2>Add Expense</h2>
-            <input type="text" id="expenseName" placeholder="Expense name" />
-            <input type="number" id="expenseAmount" placeholder="Expense amount" />
-            <button id="addExpenseBtn">Add Expense</button>
-            <p id="expenseError" class="error hidden">Please fill all fields correctly.</p>
-        </div>
+        <div class="grid-row grid-row--bottom">
 
-        <!-- SUMMARY -->
-        <div class="card summary">
-            <h2>Summary</h2>
-            <p>Total Salary: <span id="displaySalary">₹0</span></p>
-            <p>Total Expenses: <span id="displayExpenses">₹0</span></p>
-            <p>Remaining Balance: <span id="displayBalance">₹0</span></p>
-            <!-- Threshold alert -->
-            <div id="alertBanner" class="alert-banner hidden">
-                ⚠️ Warning: Balance is below 10% of your salary!
-            </div>
-        </div>
+            <section class="card" aria-labelledby="add-h">
+                <h2 id="add-h">Add Expense</h2>
+                <label class="field">
+                    <span class="field-label">Expense name</span>
+                    <input type="text" id="expenseName" placeholder="Expense Name" />
+                </label>
+                <label class="field">
+                    <span class="field-label">Expense amount</span>
+                    <input type="number" id="expenseAmount" placeholder="Expense Amount" min="0" inputmode="decimal" />
+                </label>
+                <button id="addExpenseBtn" class="btn btn--primary">Add Expense</button>
+                <p id="expenseError" class="error hidden" role="alert">Please fill all fields correctly.</p>
+            </section>
 
-        <!-- EXPENSE LIST -->
-        <div class="card">
-            <h2>Expense List</h2>
-            <ul id="expenseList"></ul>
-        </div>
+            <section class="card card--chart">
+                <div class="chart-split">
+                    <div class="legend-pane" aria-labelledby="legend-h">
+                        <h2 id="legend-h">Expense Legend</h2>
+                        <ul id="expenseLegend" class="legend-list">
+                            <li class="empty-state">Colours appear here once you add expenses.</li>
+                        </ul>
+                    </div>
+                    <div class="chart-pane" aria-labelledby="chart-h">
+                        <h2 id="chart-h">Expense Chart</h2>
+                        <div class="chart-wrap">
+                            <canvas id="expenseChart" width="300" height="300"></canvas>
+                            <p id="chartEmpty" class="chart-empty">Your breakdown will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <!-- PIE CHART -->
-        <div class="card">
-            <h2>Expense Chart</h2>
-            <canvas id="expenseChart" width="300" height="300"></canvas>
         </div>
 
     </div>
