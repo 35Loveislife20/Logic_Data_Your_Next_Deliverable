@@ -1,4 +1,4 @@
-# 💰 Cash Flow Tracker
+# 💰 Cash Flow Tracker (logic-data-your-next-deliverable)
 
 A simple, responsive, and user-friendly **Cash Flow Tracker** web application designed to help users manage income, expenses, and overall cash balance.
 
