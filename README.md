@@ -1,8 +1,8 @@
-# Cash Flow Tracker
+# 💰 Cash Flow Tracker
 
 A simple, responsive, and user-friendly **Cash Flow Tracker** web application designed to help users manage income, expenses, and overall cash balance.
 
-Built with **HTML5, CSS3, and Vanilla JavaScript**.
+Built using **HTML5, CSS3, and Vanilla JavaScript**.
 
 ---
 
@@ -14,11 +14,9 @@ Built with **HTML5, CSS3, and Vanilla JavaScript**.
 
 ## 📸 Screenshot
 
-*Add your project screenshot here.*
-
-```text
 ![Cash Flow Tracker Screenshot](screenshot.png)
-```
+
+> **Note:** Add your project screenshot as `screenshot.png` in the root folder of the project.
 
 ---
 
@@ -29,12 +27,14 @@ Built with **HTML5, CSS3, and Vanilla JavaScript**.
 * Add income transactions
 * Record income amount and details
 * Track total income
+* View income activity
 
 ### 💸 Expense Management
 
 * Add expense transactions
 * Record expense amount and details
 * Track total expenses
+* View expense activity
 
 ### 📊 Cash Flow Dashboard
 
@@ -42,26 +42,28 @@ Built with **HTML5, CSS3, and Vanilla JavaScript**.
 * View total expenses
 * View current balance
 * Monitor cash-flow activity
+* Dynamically calculate financial totals
 
 ### 🎨 User Interface
 
 * Clean and modern design
 * Responsive layout
 * Easy-to-use forms
+* Simple and intuitive interface
 * Desktop and mobile friendly
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology         | Usage                              |
-| ------------------ | ---------------------------------- |
-| HTML5              | Application structure              |
-| CSS3               | Styling and responsive design      |
-| Vanilla JavaScript | Application logic and interactions |
-| Git                | Version control                    |
-| GitHub             | Source code hosting                |
-| Vercel             | Production deployment              |
+| Technology             | Usage                              |
+| ---------------------- | ---------------------------------- |
+| **HTML5**              | Application structure              |
+| **CSS3**               | Styling and responsive design      |
+| **Vanilla JavaScript** | Application logic and interactions |
+| **Git**                | Version control                    |
+| **GitHub**             | Source code hosting                |
+| **Vercel**             | Production deployment              |
 
 > No frontend framework or UI library was used. The project is built using raw HTML, CSS, and Vanilla JavaScript.
 
@@ -72,34 +74,44 @@ Built with **HTML5, CSS3, and Vanilla JavaScript**.
 ```text
 Logic_Data_Your_Next_Deliverable/
 │
-├── index.html        # Main application page
-├── style.css         # Application styling
-├── script.js         # Cash-flow logic and interactions
-├── README.md         # Project documentation
-└── screenshot.png    # Project screenshot
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+└── screenshot.png
 ```
+
+### File Description
+
+| File             | Description                               |
+| ---------------- | ----------------------------------------- |
+| `index.html`     | Main application page                     |
+| `style.css`      | Application styling and responsive design |
+| `script.js`      | Cash-flow logic and user interactions     |
+| `README.md`      | Project documentation                     |
+| `screenshot.png` | Project screenshot                        |
 
 ---
 
 ## ⚙️ How to Run Locally
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/35Loveislife20/Logic_Data_Your_Next_Deliverable.git
 ```
 
-### 2. Open the project
+### 2. Open the Project
 
 ```bash
 cd Logic_Data_Your_Next_Deliverable
 ```
 
-### 3. Run the application
+### 3. Run the Application
 
 Open `index.html` directly in your browser.
 
-You can also use the **Live Server** extension in VS Code.
+You can also use the **Live Server** extension in VS Code for local development.
 
 ---
 
@@ -111,29 +123,30 @@ The Cash Flow Tracker is deployed on **Vercel** and connected to the GitHub repo
 
 ```text
 Local Project
-     ↓
-Git
-     ↓
-GitHub
-     ↓
-Vercel
-     ↓
-Production
+      ↓
+     Git
+      ↓
+   GitHub
+      ↓
+   Vercel
+      ↓
+ Production
 ```
 
 ### Production URL
 
-👉 **https://logic-data-your-next-deliverable.vercel.app/**
+👉 **[Cash Flow Tracker — Production Website](https://logic-data-your-next-deliverable.vercel.app/)**
 
-The project is connected to the `main` branch, so new changes pushed to `main` can trigger a new production deployment.
+The project is connected to the `main` branch. New changes pushed to `main` can automatically trigger a new Vercel production deployment.
 
 ---
 
 ## 🔄 Update the Live Website
 
-After making changes to the project:
+After making changes to the project, run:
 
 ```bash
+git status
 git add .
 git commit -m "Update Cash Flow Tracker"
 git push
@@ -170,6 +183,7 @@ This project helped practice:
 * User interaction
 * Git and GitHub
 * Vercel deployment
+* Project documentation
 
 ---
 
@@ -182,6 +196,7 @@ AI assistance was used during development for:
 * Improving JavaScript logic
 * UI/UX improvements
 * Documentation preparation
+* Identifying and resolving development issues
 
 All final project implementation and decisions were reviewed before submission.
 
@@ -189,16 +204,24 @@ All final project implementation and decisions were reviewed before submission.
 
 ## 👤 Author
 
-**Satish Kumar**
+### Satish Kumar
 
-Prodesk IT Project Submission — 2026
+**Prodesk IT Project Submission — 2026**
 
 ---
 
 ## 📄 License
 
-This project is created for educational and project-submission purposes.
+This project is created for **educational and project-submission purposes**.
 
 ---
 
-*© 2026 Cash Flow Tracker. All rights reserved.*
+<div align="center">
+
+### 💰 Cash Flow Tracker
+
+**Simple • Responsive • User Friendly**
+
+© 2026 Cash Flow Tracker. All rights reserved.
+
+</div>
