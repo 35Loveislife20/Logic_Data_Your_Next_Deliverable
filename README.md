@@ -1,14 +1,14 @@
-# 💰 Cash Flow Tracker (logic-data-your-next-deliverable)
+# 💰 Cash Flow Tracker (Logic & Data — Your Next Deliverable)
 
-A simple, responsive, and user-friendly **Cash Flow Tracker** web application designed to help users manage income, expenses, and overall cash balance.
+A simple, responsive, and user-friendly **Cash Flow Tracker** web application designed to help users manage salary, expenses, and remaining balance.
 
-Built using **HTML5, CSS3, and Vanilla JavaScript**.
+Built manually using **HTML5, CSS3, and Vanilla JavaScript** without any frontend framework.
 
 ---
 
 ## 🔗 Live Demo
 
-👉 **[Cash Flow Tracker — Live Website](https://logic-data-your-next-deliverable.vercel.app/)**
+👉 [Cash Flow Tracker — Live Website](https://logic-data-your-next-deliverable.vercel.app/)
 
 ---
 
@@ -16,56 +16,68 @@ Built using **HTML5, CSS3, and Vanilla JavaScript**.
 
 ![Cash Flow Tracker Screenshot](screenshot.png)
 
-> **Note:** Add your project screenshot as `screenshot.png` in the root folder of the project.
+> Add your project screenshot as `screenshot.png` in the root folder of the project.
 
 ---
 
 ## 🚀 Features
 
-### 💰 Income Management
+### 💰 Salary Management
 
-* Add income transactions
-* Record income amount and details
-* Track total income
-* View income activity
+* Add salary amount
+* Add salary multiple times
+* Automatically calculate total salary
+* Salary input clears after submission
+* Salary data is saved in browser storage
 
 ### 💸 Expense Management
 
-* Add expense transactions
-* Record expense amount and details
-* Track total expenses
-* View expense activity
+* Add new expenses
+* Add multiple expenses
+* Automatically combine expenses with the same name
+* Remove expenses
+* Calculate total expenses automatically
+* Expense data is saved in browser storage
 
 ### 📊 Cash Flow Dashboard
 
-* View total income
+* View total salary
 * View total expenses
-* View current balance
-* Monitor cash-flow activity
-* Dynamically calculate financial totals
+* View remaining balance
+* Automatically update calculations
+* Warning when expenses exceed salary
+* Warning when balance becomes very low
+
+### 📈 Expense Chart
+
+* Dynamic expense pie chart
+* Different colors for expense categories
+* Automatically updates when expenses are added or removed
 
 ### 🎨 User Interface
 
 * Clean and modern design
 * Responsive layout
-* Easy-to-use forms
-* Simple and intuitive interface
-* Desktop and mobile friendly
+* Simple form controls
+* Easy-to-use interface
+* Mobile-friendly design
+* Professional dashboard layout
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology             | Usage                              |
-| ---------------------- | ---------------------------------- |
-| **HTML5**              | Application structure              |
-| **CSS3**               | Styling and responsive design      |
-| **Vanilla JavaScript** | Application logic and interactions |
-| **Git**                | Version control                    |
-| **GitHub**             | Source code hosting                |
-| **Vercel**             | Production deployment              |
+| Technology             | Usage                                      |
+| ---------------------- | ------------------------------------------ |
+| **HTML5**              | Website structure                          |
+| **CSS3**               | Styling and responsive design              |
+| **Vanilla JavaScript** | Application logic and dynamic calculations |
+| **Chart.js**           | Expense chart                              |
+| **Git**                | Version control                            |
+| **GitHub**             | Source code hosting                        |
+| **Vercel**             | Deployment                                 |
 
-> No frontend framework or UI library was used. The project is built using raw HTML, CSS, and Vanilla JavaScript.
+> The application was designed and coded manually using HTML, CSS, and JavaScript.
 
 ---
 
@@ -83,13 +95,13 @@ Logic_Data_Your_Next_Deliverable/
 
 ### File Description
 
-| File             | Description                               |
-| ---------------- | ----------------------------------------- |
-| `index.html`     | Main application page                     |
-| `style.css`      | Application styling and responsive design |
-| `script.js`      | Cash-flow logic and user interactions     |
-| `README.md`      | Project documentation                     |
-| `screenshot.png` | Project screenshot                        |
+| File             | Description                                           |
+| ---------------- | ----------------------------------------------------- |
+| `index.html`     | Main application structure                            |
+| `style.css`      | Complete styling and responsive design                |
+| `script.js`      | Salary, expense, calculation, storage and chart logic |
+| `README.md`      | Project documentation                                 |
+| `screenshot.png` | Project screenshot                                    |
 
 ---
 
@@ -109,15 +121,15 @@ cd Logic_Data_Your_Next_Deliverable
 
 ### 3. Run the Application
 
-Open `index.html` directly in your browser.
+Open `index.html` in your browser.
 
-You can also use the **Live Server** extension in VS Code for local development.
+For development, you can also use the **Live Server** extension in VS Code.
 
 ---
 
 ## 🌐 Deployment
 
-The Cash Flow Tracker is deployed on **Vercel** and connected to the GitHub repository.
+The project is deployed using **Vercel** and connected to the GitHub repository.
 
 ### Deployment Flow
 
@@ -133,42 +145,37 @@ Local Project
  Production
 ```
 
-### Production URL
+### Production Website
 
-👉 **[Cash Flow Tracker — Production Website](https://logic-data-your-next-deliverable.vercel.app/)**
-
-The project is connected to the `main` branch. New changes pushed to `main` can automatically trigger a new Vercel production deployment.
+👉 [Cash Flow Tracker — Production Website](https://logic-data-your-next-deliverable.vercel.app/)
 
 ---
 
 ## 🔄 Update the Live Website
 
-After making changes to the project, run:
+After making changes to the project:
 
 ```bash
 git status
-
 git add .
-
 git commit -m "Update Cash Flow Tracker"
-
 git push
 ```
 
-Vercel will automatically deploy the latest version from the connected `main` branch.
+The updated project can then be deployed through the connected Vercel project.
 
 ---
 
 ## 🎯 Project Objective
 
-The objective of this project is to build a simple financial tracking application that allows users to monitor their cash flow by recording income and expenses.
+The main objective of this project is to create a simple cash-flow management application that allows users to record salary and expenses and understand their current financial balance.
 
-The application helps users understand:
+The application calculates:
 
-* Total income
-* Total expenses
-* Available balance
-* Overall cash-flow activity
+* Total Salary
+* Total Expenses
+* Remaining Balance
+* Expense distribution
 
 ---
 
@@ -176,25 +183,18 @@ The application helps users understand:
 
 This project helped practice:
 
-* HTML5 page structure
+* HTML5 structure
 * CSS3 styling
 * Responsive web design
 * JavaScript DOM manipulation
 * Event handling
-* Form handling
+* Form validation
 * Dynamic calculations
-* User interaction
+* Local storage
+* Chart implementation
 * Git and GitHub
 * Vercel deployment
 * Project documentation
-
----
-
-## 🚫 AI Usage
-
-No AI tools or AI assistance were used in the development of this project.
-
-All coding, logic implementation, UI/UX design, debugging, testing, and documentation were completed independently by the developer.
 
 ---
 
@@ -208,7 +208,7 @@ All coding, logic implementation, UI/UX design, debugging, testing, and document
 
 ## 📄 License
 
-This project is created for **educational and project-submission purposes**.
+This project was created for **educational and project-submission purposes**.
 
 ---
 
@@ -218,6 +218,6 @@ This project is created for **educational and project-submission purposes**.
 
 **Simple • Responsive • User Friendly**
 
-© 2026 Cash Flow Tracker. All rights reserved.
+© 2026 Cash Flow Tracker
 
 </div>
