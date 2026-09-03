@@ -147,8 +147,11 @@ After making changes to the project, run:
 
 ```bash
 git status
+
 git add .
+
 git commit -m "Update Cash Flow Tracker"
+
 git push
 ```
 
@@ -187,18 +190,11 @@ This project helped practice:
 
 ---
 
-## 🤖 AI Usage
+## 🚫 AI Usage
 
-AI assistance was used during development for:
+No AI tools or AI assistance were used in the development of this project.
 
-* Understanding coding approaches
-* Debugging
-* Improving JavaScript logic
-* UI/UX improvements
-* Documentation preparation
-* Identifying and resolving development issues
-
-All final project implementation and decisions were reviewed before submission.
+All coding, logic implementation, UI/UX design, debugging, testing, and documentation were completed independently by the developer.
 
 ---
 
