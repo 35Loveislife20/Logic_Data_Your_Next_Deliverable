@@ -27,9 +27,9 @@ function render() {
     const total = expenses.reduce((s, e) => s + e.amount, 0);
     const balance = salary - total;
 
-    displaySalary.textContent = money(salary);
-    displayExpenses.textContent = money(total);
-    displayBalance.textContent = money(balance);
+    displaySalary.textContent = salary === 0 ? '' : money(salary);
+    displayExpenses.textContent = expenses.length === 0 ? '' : money(total);
+    displayBalance.textContent = salary === 0 ? '' : money(balance);
     displayBalance.classList.toggle('negative', balance < 0);
 
     const warning = salary > 0 && (balance < 0 || balance < salary * .1);
@@ -100,6 +100,16 @@ addExpenseBtn.onclick = () => {
     const amount = Number(expenseAmountInput.value);
 
     if (!name || !Number.isFinite(amount) || amount <= 0) {
+        expenseError.textContent = "Please fill all fields correctly.";
+        expenseError.classList.remove('hidden');
+        return;
+    }
+
+    const currentTotalExpenses = expenses.reduce((s, e) => s + e.amount, 0);
+    const remainingBalance = salary - currentTotalExpenses;
+
+    if (amount > remainingBalance) {
+        expenseError.textContent = `Insufficient balance! You only have ${money(remainingBalance)} left.`;
         expenseError.classList.remove('hidden');
         return;
     }
@@ -149,12 +159,10 @@ salaryInput.onkeydown = e => {
     };
 });
 
-const data = JSON.parse(
-    localStorage.getItem('cashFlow') || '{}'
-);
+localStorage.removeItem('cashFlow');
 
-salary = Number(data.salary) || 0;
-expenses = data.expenses || [];
-nextId = Number(data.nextId) || 0;
+salary = 0;
+expenses = [];
+nextId = 0;
 
 render();
